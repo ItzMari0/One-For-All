@@ -35,7 +35,7 @@ Normalize uma tabela na terceira forma normal e acesse as informações desta ta
   <summary><strong>🗓 Data de Entrega</strong></summary><br />
 
   - Serão `2` dias de projeto.
-  - Data de entrega para avaliação regular do projeto: `02/11/2022 14:00`.
+  - Data de entrega para avaliação regular do projeto: `03/11/2022 14:00`.
 
 </details>
 
