@@ -72,21 +72,22 @@ DROP DATABASE IF EXISTS SpotifyClone;
     song_id INT PRIMARY KEY,
     song_name VARCHAR(100) NOT NULL,
     song_duration INT,
-    album_id INT NOT NULL, FOREIGN KEY(album_id) REFERENCES album(album_id)
+    album_id INT NOT NULL, FOREIGN KEY(album_id) REFERENCES album(album_id),
+    artist_id INT, FOREIGN KEY(artist_id) REFERENCES artist(artist_id)
   ) engine = InnoDB;
 
-  INSERT INTO SpotifyClone.song(song_id, song_name, song_duration, album_id)
+  INSERT INTO SpotifyClone.song(song_id, song_name, song_duration, album_id, artist_id)
     VALUES
-      (1, 'BREAK MY SOUL', 279, 1),
-      (2, 'VIRGO´S GROOVE', 369, 1),
-      (3, 'ALIEN SUPERSTAR', 116, 1),
-      (4, 'Don´t Stop Me Now', 203, 2),
-      (5, 'Under Pressure', 152, 3),
-      (6, 'Como Nossos Pais', 105, 4),
-      (7, 'O Medo de Amar é o Medo de Ser Livre', 207, 5),
-      (8, 'Samba em Paris', 267, 6),
-      (9, 'The Bard´s Song', 244, 7),
-      (10, 'Feeling Good', 100, 8);
+      (1, 'BREAK MY SOUL', 279, 1, 1),
+      (2, 'VIRGO´S GROOVE', 369, 1, 1),
+      (3, 'ALIEN SUPERSTAR', 116, 1, 1),
+      (4, 'Don´t Stop Me Now', 203, 2, 2),
+      (5, 'Under Pressure', 152, 3, 2),
+      (6, 'Como Nossos Pais', 105, 4, 3),
+      (7, 'O Medo de Amar é o Medo de Ser Livre', 207, 5, 3),
+      (8, 'Samba em Paris', 267, 6, 4),
+      (9, 'The Bard´s Song', 244, 7, 5),
+      (10, 'Feeling Good', 100, 8, 6);
 
   CREATE TABLE SpotifyClone.following(
     following_id INT,
@@ -106,11 +107,11 @@ DROP DATABASE IF EXISTS SpotifyClone;
       (7, 4, 4),
       (8, 5, 5),
       (9, 5, 6),
-      (10, 6, NULL),
-      (11, 7, 6),
-      (12, 8, NULL),
+      (10, 6, 1),
+      (11, 6, 6),
+      (12, 7, 6),
       (13, 9, 3),
-      (14, 10, NULL);
+      (14, 10, 2);
 
   CREATE TABLE SpotifyClone.history(
     history_id INT,
