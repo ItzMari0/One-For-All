@@ -1,5 +1,5 @@
 SELECT 
-    Song_name AS nome_musica,
+    song_name AS nome_musica,
     REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(song_name,
                         'The Bard’s Song',
                         'The QA’s Song'),
